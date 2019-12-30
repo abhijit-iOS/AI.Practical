@@ -26,6 +26,9 @@
 		7CD1CF9E23BA03EA00F54CA0 /* UserHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1CF9C23BA03EA00F54CA0 /* UserHeaderCell.xib */; };
 		7CD1CFA123BA041700F54CA0 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1CF9F23BA041700F54CA0 /* ItemsCell.swift */; };
 		7CD1CFA223BA041700F54CA0 /* ItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA023BA041700F54CA0 /* ItemsCell.xib */; };
+		7CD1CFA523BA0C6800F54CA0 /* UserFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA323BA0C6800F54CA0 /* UserFooterCell.swift */; };
+		7CD1CFA623BA0C6800F54CA0 /* UserFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA423BA0C6800F54CA0 /* UserFooterCell.xib */; };
+		7CD1CFA823BA0FBD00F54CA0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA723BA0FBD00F54CA0 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		7CD1CF9C23BA03EA00F54CA0 /* UserHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderCell.xib; sourceTree = "<group>"; };
 		7CD1CF9F23BA041700F54CA0 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
 		7CD1CFA023BA041700F54CA0 /* ItemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsCell.xib; sourceTree = "<group>"; };
+		7CD1CFA323BA0C6800F54CA0 /* UserFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFooterCell.swift; sourceTree = "<group>"; };
+		7CD1CFA423BA0C6800F54CA0 /* UserFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserFooterCell.xib; sourceTree = "<group>"; };
+		7CD1CFA723BA0FBD00F54CA0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8747C74D03DED1F234CFB396 /* Pods-Practical.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practical.debug.xcconfig"; path = "Target Support Files/Pods-Practical/Pods-Practical.debug.xcconfig"; sourceTree = "<group>"; };
 		C32C6BAB0349378CE8FC3CA7 /* Pods_Practical.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practical.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +121,7 @@
 			children = (
 				7CD1CF8523BA01B600F54CA0 /* Util.swift */,
 				7CD1CF8723BA01C600F54CA0 /* Constant.swift */,
+				7CD1CFA723BA0FBD00F54CA0 /* Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -155,6 +162,8 @@
 				7CD1CF9C23BA03EA00F54CA0 /* UserHeaderCell.xib */,
 				7CD1CF9F23BA041700F54CA0 /* ItemsCell.swift */,
 				7CD1CFA023BA041700F54CA0 /* ItemsCell.xib */,
+				7CD1CFA323BA0C6800F54CA0 /* UserFooterCell.swift */,
+				7CD1CFA423BA0C6800F54CA0 /* UserFooterCell.xib */,
 			);
 			path = UserCell;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CD1CF7D23BA00BD00F54CA0 /* LaunchScreen.storyboard in Resources */,
+				7CD1CFA623BA0C6800F54CA0 /* UserFooterCell.xib in Resources */,
 				7CD1CF7A23BA00BD00F54CA0 /* Assets.xcassets in Resources */,
 				7CD1CF7823BA00BC00F54CA0 /* Main.storyboard in Resources */,
 				7CD1CF9E23BA03EA00F54CA0 /* UserHeaderCell.xib in Resources */,
@@ -284,9 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD1CFA823BA0FBD00F54CA0 /* Extension.swift in Sources */,
 				7CD1CF9023BA01D300F54CA0 /* JSONable.swift in Sources */,
 				7CD1CF7523BA00BC00F54CA0 /* ViewController.swift in Sources */,
 				7CD1CF9523BA01D300F54CA0 /* Router.swift in Sources */,
+				7CD1CFA523BA0C6800F54CA0 /* UserFooterCell.swift in Sources */,
 				7CD1CF9323BA01D300F54CA0 /* AIResult.swift in Sources */,
 				7CD1CF9223BA01D300F54CA0 /* AIResponse.swift in Sources */,
 				7CD1CF9123BA01D300F54CA0 /* AIWebservice.swift in Sources */,

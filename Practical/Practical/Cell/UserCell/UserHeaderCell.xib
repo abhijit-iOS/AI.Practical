@@ -25,6 +25,11 @@
                             <constraint firstAttribute="width" constant="50" id="NEC-kI-Geo"/>
                             <constraint firstAttribute="width" secondItem="4AK-hq-bw2" secondAttribute="height" multiplier="1:1" id="QKr-p5-EOY"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHw-zk-IBw">
                         <rect key="frame" x="70" y="24.5" width="295" height="21"/>
@@ -32,9 +37,20 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-jZ-0Hg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="a8B-2F-uPz"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="0Fb-jZ-0Hg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4qr-By-weW"/>
+                <constraint firstAttribute="trailing" secondItem="0Fb-jZ-0Hg" secondAttribute="trailing" id="ACY-qo-4U0"/>
+                <constraint firstItem="0Fb-jZ-0Hg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GNk-qh-2FR"/>
                 <constraint firstAttribute="trailing" secondItem="oHw-zk-IBw" secondAttribute="trailing" constant="10" id="Ngu-Wh-Obh"/>
                 <constraint firstItem="4AK-hq-bw2" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="VdX-ps-FQz"/>
                 <constraint firstItem="oHw-zk-IBw" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ZP0-jN-rHX"/>

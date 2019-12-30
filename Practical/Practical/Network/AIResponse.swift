@@ -5,19 +5,17 @@ struct AIResponse {
     var status      : Bool!
     var statusCode  : Int!
     var message     : String!
-    var nextPage    : Int!
+    var hasNextPage : Bool!
     var data        : Any!
-    var isMoreComments : Bool!
-    var isPlanActive: Int!
+    
     
     init() {
-        status     = false
-        message    = ""
-        statusCode = 1
-        nextPage   = 1
-        data       = nil
-        isMoreComments = false
-        isPlanActive = 0
+        status      = false
+        message     = ""
+        statusCode  = 1
+        hasNextPage = false
+        data        = nil
+        
     }
 
     init<T>(parameter: JSON, dataKey: String?, type: T? = nil) {
@@ -35,7 +33,7 @@ struct AIResponse {
             data = parameter
         }
 
-        nextPage   = parameter["nextPage"].intValue
+        hasNextPage   = parameter["data"]["has_more"].boolValue
         
     }
 
@@ -43,9 +41,7 @@ struct AIResponse {
         var response        = AIResponse()
         response.status     = false
         response.statusCode = 502
-        response.nextPage   = -1
-        response.isMoreComments = false
-        response.isPlanActive = 0
+        response.hasNextPage   = false
         response.message    = "No Internet"
         response.data       = nil
         return response
