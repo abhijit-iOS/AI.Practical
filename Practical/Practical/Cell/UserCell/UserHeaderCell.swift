@@ -15,6 +15,7 @@ class UserHeaderCell: UICollectionViewCell {
     @IBOutlet private weak var imgUser: UIImageView!
     @IBOutlet private weak var lblUserName: UILabel!
     
+    // MARK: Variables
     var user:User! {
         didSet {
             self.imgUser.kf.indicatorType = .activity

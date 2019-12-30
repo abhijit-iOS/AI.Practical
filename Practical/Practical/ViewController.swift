@@ -19,17 +19,32 @@ class ViewController: UIViewController {
     private var hasNextPage = false
     private var isLoading = false
     
+    lazy var refreshCntrl:UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(reloadList), for: .valueChanged)
+        return refreshControl
+    }()
+    
     // MARK:- View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         prepareView()
     }
+    
     // MARK:- Custom Methods
     private func prepareView()  {
+        self.title = "User List"
         clnUsers.register(UINib(nibName: String(describing: ItemsCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ItemsCell.self))
         clnUsers.register(UINib(nibName: String(describing: UserHeaderCell.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: UserHeaderCell.self))
         clnUsers.register(UINib(nibName: String(describing: UserFooterCell.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: String(describing: UserFooterCell.self))
+        self.clnUsers.addSubview(self.refreshCntrl)
+        self.refreshCntrl.beginRefreshing()
+        getUserList()
+    }
+    @objc func reloadList()  {
+        self.nextOffset = 0
         getUserList()
     }
     
@@ -51,17 +66,19 @@ class ViewController: UIViewController {
                         }
                     }
                 } else {
-                    
+                    self.showAlert(message: response.message)
                 }
                 break
             case .failure(let error):
+                self.showAlert(message: error.localizedDescription)
                 break
             }
+            self.refreshCntrl.endRefreshing()
             self.isLoading = false
         }
     }
 }
-
+// MARK:- UICollectionViewDataSource Methods
 extension ViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.arrUsers.count
@@ -117,7 +134,7 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDelegateFl
         return CGSize(width: collectionView.frame.size.width, height: 70.0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        let height:CGFloat = ((section == arrUsers.count - 1) && hasNextPage) ? 70.0 : 0.7
+        let height:CGFloat = ((section == arrUsers.count - 1) && hasNextPage) ? 70.0 : 0.01
         return CGSize(width: collectionView.frame.size.width, height: height)
     }
     

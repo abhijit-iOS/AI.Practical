@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    @IBInspectable var cornerRadius:Double {
+    @IBInspectable var cornerRadius:CGFloat {
         get {
             return 0
         }
@@ -23,4 +23,13 @@ extension UIView {
         }
     }
     
+}
+
+extension UIViewController {
+    func showAlert(message:String)  {
+        let alertController = UIAlertController.init(title: "", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

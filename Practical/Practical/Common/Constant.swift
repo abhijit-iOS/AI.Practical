@@ -8,5 +8,8 @@
 
 import Foundation
 
+typealias Key = AIText.APIKey
+typealias Message = AIText.Message
+
 let WebService = AIWebservice.API
 let pageLimit =  10

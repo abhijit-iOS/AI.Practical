@@ -29,6 +29,7 @@
 		7CD1CFA523BA0C6800F54CA0 /* UserFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA323BA0C6800F54CA0 /* UserFooterCell.swift */; };
 		7CD1CFA623BA0C6800F54CA0 /* UserFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA423BA0C6800F54CA0 /* UserFooterCell.xib */; };
 		7CD1CFA823BA0FBD00F54CA0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA723BA0FBD00F54CA0 /* Extension.swift */; };
+		7CD1CFAA23BA13AA00F54CA0 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1CFA923BA13AA00F54CA0 /* Text.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		7CD1CFA323BA0C6800F54CA0 /* UserFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFooterCell.swift; sourceTree = "<group>"; };
 		7CD1CFA423BA0C6800F54CA0 /* UserFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserFooterCell.xib; sourceTree = "<group>"; };
 		7CD1CFA723BA0FBD00F54CA0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7CD1CFA923BA13AA00F54CA0 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		8747C74D03DED1F234CFB396 /* Pods-Practical.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practical.debug.xcconfig"; path = "Target Support Files/Pods-Practical/Pods-Practical.debug.xcconfig"; sourceTree = "<group>"; };
 		C32C6BAB0349378CE8FC3CA7 /* Pods_Practical.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practical.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				7CD1CF8523BA01B600F54CA0 /* Util.swift */,
 				7CD1CF8723BA01C600F54CA0 /* Constant.swift */,
 				7CD1CFA723BA0FBD00F54CA0 /* Extension.swift */,
+				7CD1CFA923BA13AA00F54CA0 /* Text.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				7CD1CF9123BA01D300F54CA0 /* AIWebservice.swift in Sources */,
 				7CD1CF9423BA01D300F54CA0 /* Reachability.swift in Sources */,
 				7CD1CF8623BA01B600F54CA0 /* Util.swift in Sources */,
+				7CD1CFAA23BA13AA00F54CA0 /* Text.swift in Sources */,
 				7CD1CF7323BA00BC00F54CA0 /* AppDelegate.swift in Sources */,
 				7CD1CF8823BA01C600F54CA0 /* Constant.swift in Sources */,
 				7CD1CF9823BA01F300F54CA0 /* User.swift in Sources */,

@@ -51,7 +51,7 @@ extension Router {
     var dataKey: String? {
         switch self {
         case .getUserList:
-            return "users"
+            return Key.users
         }
     }
 }
