@@ -30,27 +30,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        prepareView()
+        self.prepareView()
     }
     
     // MARK:- Custom Methods
     private func prepareView()  {
         self.title = "User List"
-        clnUsers.register(UINib(nibName: String(describing: ItemsCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ItemsCell.self))
-        clnUsers.register(UINib(nibName: String(describing: UserHeaderCell.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: UserHeaderCell.self))
-        clnUsers.register(UINib(nibName: String(describing: UserFooterCell.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: String(describing: UserFooterCell.self))
+        self.clnUsers.register(UINib(nibName: String(describing: ItemsCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ItemsCell.self))
+        self.clnUsers.register(UINib(nibName: String(describing: UserHeaderCell.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: UserHeaderCell.self))
+        self.clnUsers.register(UINib(nibName: String(describing: UserFooterCell.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: String(describing: UserFooterCell.self))
         self.clnUsers.addSubview(self.refreshCntrl)
         self.refreshCntrl.beginRefreshing()
-        getUserList()
+        self.getUserList()
     }
     @objc func reloadList()  {
         self.nextOffset = 0
-        getUserList()
+        self.getUserList()
     }
     
     // MARK:- Web service Methods
     private func getUserList() {
-        isLoading = true
+        self.isLoading = true
         WebService.sendRequest(.getUserList, query: "offset=\(self.nextOffset)&limit=\(pageLimit)") { (result) in
             switch result {
             case .success(let response):
@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         }
     }
 }
+
 // MARK:- UICollectionViewDataSource Methods
 extension ViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -86,7 +87,6 @@ extension ViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.arrUsers[section].items.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ItemsCell.self), for: indexPath) as! ItemsCell
         cell.item = self.arrUsers[indexPath.section].items[indexPath.row]
@@ -96,7 +96,8 @@ extension ViewController : UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: String(describing: UserHeaderCell.self), for: indexPath) as! UserHeaderCell
-            header.user = arrUsers[indexPath.section]
+            header.tag = indexPath.section
+            header.user = self.arrUsers[indexPath.section]
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: String(describing: UserFooterCell.self), for: indexPath) as! UserFooterCell
@@ -137,5 +138,4 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDelegateFl
         let height:CGFloat = ((section == arrUsers.count - 1) && hasNextPage) ? 70.0 : 0.01
         return CGSize(width: collectionView.frame.size.width, height: height)
     }
-    
 }

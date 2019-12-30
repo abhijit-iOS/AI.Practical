@@ -14,6 +14,7 @@ class UserHeaderCell: UICollectionViewCell {
     // MARK:- IBOutlet
     @IBOutlet private weak var imgUser: UIImageView!
     @IBOutlet private weak var lblUserName: UILabel!
+    @IBOutlet private weak var imgSeparator: UIImageView!
     
     // MARK: Variables
     var user:User! {
@@ -21,6 +22,7 @@ class UserHeaderCell: UICollectionViewCell {
             self.imgUser.kf.indicatorType = .activity
             self.imgUser.kf.setImage(with: URL(string: user.image))
             self.lblUserName.text = user.name
+            self.imgSeparator.isHidden = self.tag == 0 ? true : false
         }
     }
     

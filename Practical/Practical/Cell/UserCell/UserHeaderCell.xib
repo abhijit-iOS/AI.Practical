@@ -60,6 +60,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="375" height="70"/>
             <connections>
+                <outlet property="imgSeparator" destination="0Fb-jZ-0Hg" id="PPf-Xf-ufV"/>
                 <outlet property="imgUser" destination="4AK-hq-bw2" id="vQV-Yl-MVW"/>
                 <outlet property="lblUserName" destination="oHw-zk-IBw" id="Aea-Mb-det"/>
             </connections>
